@@ -46,3 +46,19 @@ margin:10px 0;
 .movie-card p{
 color:#555;
 }
+
+/* Star Rating */
+
+.rating{
+margin-top:10px;
+font-size:20px;
+cursor:pointer;
+}
+
+.star{
+color:#ccc;
+}
+
+.star.active{
+color:gold;
+}

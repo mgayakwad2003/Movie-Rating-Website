@@ -25,7 +25,7 @@ poster: "images-interstellar.jpg"
     title: "Titanic",
     genre: "Romance",
     year: "1997",
-    poster: "images.jpg"
+    poster: "images-titanic.jpg"
 }
 
 ];
@@ -43,8 +43,33 @@ card.innerHTML = `
 <h3>${movie.title}</h3>
 <p>Genre: ${movie.genre}</p>
 <p>Year: ${movie.year}</p>
+<div class="rating">
+<span class="star">&#9733;</span>
+<span class="star">&#9733;</span>
+<span class="star">&#9733;</span>
+<span class="star">&#9733;</span>
+<span class="star">&#9733;</span>
+</div>
 `;
 
 container.appendChild(card);
+
+});
+
+document.addEventListener("click", function(e){
+
+if(e.target.classList.contains("star")){
+
+let stars = e.target.parentElement.querySelectorAll(".star");
+
+stars.forEach(star => star.classList.remove("active"));
+
+let clickedIndex = [...stars].indexOf(e.target);
+
+for(let i=0;i<=clickedIndex;i++){
+stars[i].classList.add("active");
+}
+
+}
 
 });
